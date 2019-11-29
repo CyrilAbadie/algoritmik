@@ -1,0 +1,18 @@
+{
+  "name": "algoritmik",
+  "version": "1.0.0",
+  "description": "Some algoritmik samples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "algoritmique",
+    "ecmascript"
+  ],
+  "author": "Cyril",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
