@@ -19,8 +19,35 @@
  */
  function prix (price, quantity, sourceUnit, targetUnit, targetQuantity=null) {
      let ingredientPrice = 0
-     return ingredientPrice;
+
+     if (sourceUnit == targetUnit) {
+         if (targetQuantity != null) {
+         ingredientPrice = ingredientPrice + (price * quantity/targetQuantity) ;}
+         else {ingredientPrice = price * quantity;}
+     }
+     else {
+        switch (sourceUnit) {
+            case 'kg':
+                ingredientPrice = price * (quantity / 1000)
+
+            break; 
+            case 'l' :
+                switch (targetUnit) {
+                    case 'cl' :
+                        ingredientPrice = price * (quantity /100)
+                        break;
+                    case 'ml':
+                        ingredientPrice = price * (quantity / 1000)
+                        break;
+                }
+                break; 
+            
+    }
 }
+
+return ingredientPrice;
+}
+
 
  /**
   * @constant array
@@ -68,6 +95,8 @@ const qteAProduire = 300
  //First... Loop over ingredients to display each ingredient
  for (let i = 0; i < ingredients.length ; i++) {
      let ingredient = ingredients[i]; // Store the array of ingredients at the indice i
-     let price = prix (ingredient[1], ingredient[3], ingredient[2], ingredient[4]);
-     console.log('Le coût pour ' + ingredient[0] + ' est de ' + price + '€');
+     //Cumul les coûts de production...
+     coutProduction = coutProduction + prix (ingredient[1], ingredient[3], ingredient[2], ingredient[4], ingredient [5]);
+     
  }
+ console.log('Le coût pour 15 crepes est de : ' +  coutProduction + '€')
