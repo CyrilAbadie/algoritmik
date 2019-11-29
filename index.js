@@ -2,7 +2,7 @@ const readLine = require('readline-sync');
 
 /**
  * @name index
- * @author Cyril - Nov. 2019
+ * @author Aélion - Nov. 2019 - Cyril
  * @package
  * @version 1.0.0
  */
