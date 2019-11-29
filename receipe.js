@@ -20,7 +20,6 @@
  function prix (price, quantity, sourceUnit, targetUnit, targetQuantity=null) {
      let ingredientPrice = 0
      return ingredientPrice;
-
 }
 
  /**
