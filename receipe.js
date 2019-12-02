@@ -96,7 +96,30 @@ const qteAProduire = 300
  for (let i = 0; i < ingredients.length ; i++) {
      let ingredient = ingredients[i]; // Store the array of ingredients at the indice i
      //Cumul les coûts de production...
-     coutProduction = coutProduction + prix (ingredient[1], ingredient[3], ingredient[2], ingredient[4], ingredient [5]);
+     coutProductionRecette = coutProductionRecette + prix (ingredient[1], ingredient[3], ingredient[2], ingredient[4], ingredient [5]);
      
  }
- console.log('Le coût pour 15 crepes est de : ' +  coutProduction + '€')
+ console.log('Le coût pour ' + qteProduite + ' crepes est de : ' +  coutProductionRecette + ' €')
+
+ //calcul du coût pour une crepe
+ coutProduction = coutProductionRecette / qteProduite
+ console.log('Coût pour 1 crepe : ' + coutProduction + ' €')
+ console.log( 'et avec la conso : ' + ((consoHeure* tempsCuisson) + coutProduction) + ' €')
+
+ 
+ 
+
+for (let j = 0 ; j < tauxRentabilite.length; j++) {
+    let rentabilite = tauxRentabilite[j]
+    let sellPrice = coutProduction + (coutProduction*rentabilite/100)
+
+
+  console.log('Vente à l\'unité de : ' + rentabilite+ ' %: ' + sellPrice + '€');
+}
+
+
+
+
+
+
+
